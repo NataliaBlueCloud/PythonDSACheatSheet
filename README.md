@@ -93,6 +93,7 @@ c['a'] += 1           # Increment count
 c.update("more")      # Add counts from iterable
 c.total()             # Sum of all counts
 c.elements()          # Returns an iterator over elements repeating 
+c.subtract("ole")     # Subtract counts from iterable (can go negative)
 ```
 
 ## Deque
