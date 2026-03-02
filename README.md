@@ -30,6 +30,9 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
 ## Operator Precedence
 ![Python Operators](https://user-images.githubusercontent.com/47276307/172329850-61fc0809-a4b0-416c-848b-1c502ecb4772.jpg)
 
+![Complexity Big O Notation](complexity_O_Notation.png)
+
+
 # Data Structures
 
 ## Lists
