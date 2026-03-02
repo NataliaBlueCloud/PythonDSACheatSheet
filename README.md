@@ -35,7 +35,31 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
 ## Lists
 Time Complexities:
 ![List Operations](https://user-images.githubusercontent.com/47276307/172330098-1c5f0a6e-7f80-4f4f-9be6-1d734e2c70cd.jpg)
+## Python List (Array) Time Complexity
 
+| Operation | Example | Time Complexity |
+|---------|--------|----------------|
+| Access by index | `arr[i]` | O(1) |
+| Assign by index | `arr[i] = x` | O(1) |
+| Append | `arr.append(x)` | O(1) amortized |
+| Pop last | `arr.pop()` | O(1) |
+| Length | `len(arr)` | O(1) |
+| Boolean check | `if arr:` | O(1) |
+| Iterate | `for x in arr:` | O(n) |
+| Search | `x in arr` | O(n) |
+| Find index | `arr.index(x)` | O(n) |
+| Insert (middle) | `arr.insert(i, x)` | O(n) |
+| Pop (middle) | `arr.pop(i)` | O(n) |
+| Remove by value | `arr.remove(x)` | O(n) |
+| Slice | `arr[a:b]` | O(n) |
+| Copy | `arr.copy()` / `arr[:]` | O(n) |
+| Extend | `arr.extend(iterable)` | O(n) |
+| Reverse | `arr.reverse()` | O(n) |
+| Clear | `arr.clear()` | O(n) |
+| Count | `arr.count(x)` | O(n) |
+| Min / Max | `min(arr)` / `max(arr)` | O(n) |
+| Sum | `sum(arr)` | O(n) |
+| Sort | `arr.sort()` / `sorted(arr)` | O(n log n) |
 ```python
 nums = [1,2,3]
 
