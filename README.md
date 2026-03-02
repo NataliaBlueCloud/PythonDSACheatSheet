@@ -40,29 +40,36 @@ Time Complexities:
 ![List Operations](https://user-images.githubusercontent.com/47276307/172330098-1c5f0a6e-7f80-4f4f-9be6-1d734e2c70cd.jpg)
 ### Python List (Array) Time Complexity
 
-| Operation | Example | Time Complexity |
-|---------|--------|----------------|
-| Access by index | `arr[i]` | O(1) |
-| Assign by index | `arr[i] = x` | O(1) |
-| Append | `arr.append(x)` | O(1) amortized |
-| Pop last | `arr.pop()` | O(1) |
-| Length | `len(arr)` | O(1) |
-| Boolean check | `if arr:` | O(1) |
-| Iterate | `for x in arr:` | O(n) |
-| Search | `x in arr` | O(n) |
-| Find index | `arr.index(x)` | O(n) |
-| Insert (middle) | `arr.insert(i, x)` | O(n) |
-| Pop (middle) | `arr.pop(i)` | O(n) |
-| Remove by value | `arr.remove(x)` | O(n) |
-| Slice | `arr[a:b]` | O(n) |
-| Copy | `arr.copy()` / `arr[:]` | O(n) |
-| Extend | `arr.extend(iterable)` | O(n) |
-| Reverse | `arr.reverse()` | O(n) |
-| Clear | `arr.clear()` | O(n) |
-| Count | `arr.count(x)` | O(n) |
-| Min / Max | `min(arr)` / `max(arr)` | O(n) |
-| Sum | `sum(arr)` | O(n) |
-| Sort | `arr.sort()` / `sorted(arr)` | O(n log n) |
+## Python `list` (Array) — Time & Space Complexity (DSA)
+
+| Operation | Example | Time | Space | DSA Notes |
+|---------|--------|------|-------|----------|
+| Create empty | `arr = []` | O(1) | O(1) | Init |
+| Create with values | `[1,2,3]` | O(n) | O(n) | Allocation |
+| Access by index | `arr[i]` | O(1) | — | Core operation |
+| Assign by index | `arr[i] = x` | O(1) | — | Overwrite |
+| Length | `len(arr)` | O(1) | — | Stored internally |
+| Append | `arr.append(x)` | O(1)* | O(1) | Amortized |
+| Extend | `arr.extend(b)` | O(m) | O(1) | Add iterable |
+| Insert (middle) | `arr.insert(i,x)` | O(n) | O(1) | Shift elems |
+| Pop last | `arr.pop()` | O(1) | O(1) | Stack use |
+| Pop index | `arr.pop(i)` | O(n) | O(1) | Shift elems |
+| Remove value | `arr.remove(x)` | O(n) | O(1) | Search + shift |
+| Clear | `arr.clear()` | O(n) | O(1) | Reset |
+| Copy | `arr.copy()` | O(n) | O(n) | New list |
+| Slice | `arr[a:b]` | O(k) | O(k) | Copy slice |
+| Reverse (in place) | `arr.reverse()` | O(n) | O(1) | Two pointers |
+| Sort (in place) | `arr.sort()` | O(n log n) | O(1) | Timsort |
+| Sorted copy | `sorted(arr)` | O(n log n) | O(n) | New list |
+| Membership test | `x in arr` | O(n) | — | Linear search |
+| Index of value | `arr.index(x)` | O(n) | — | First match |
+| Count value | `arr.count(x)` | O(n) | — | Frequency |
+| Min / Max | `min(arr)` / `max(arr)` | O(n) | — | Scan |
+| Sum | `sum(arr)` | O(n) | — | Accumulate |
+| Iterate | `for x in arr:` | O(n) | — | Visit all |
+| Enumerate | `enumerate(arr)` | O(n) | — | Index + value |
+| Concatenate | `a + b` | O(n+m) | O(n+m) | New list |
+| Repeat | `arr * k` | O(nk) | O(nk) | Copy elems |
 ```python
 nums = [1,2,3]
 
