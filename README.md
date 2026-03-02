@@ -38,7 +38,7 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
 ## Lists
 Time Complexities:
 ![List Operations](https://user-images.githubusercontent.com/47276307/172330098-1c5f0a6e-7f80-4f4f-9be6-1d734e2c70cd.jpg)
-## Python List (Array) Time Complexity
+### Python List (Array) Time Complexity
 
 | Operation | Example | Time Complexity |
 |---------|--------|----------------|
@@ -84,6 +84,55 @@ nums[1:]    # Everything after index 1
 nums[:3]    # First three elements
 ```
 
+### Python `set` (HashSet)
+HashSet is implemented as a hash table, and hash table lookups are constant time on average.
+
+```python
+key
+```
+Example:
+```python
+{"apple", "banana"}
+```
+| Operation | Example | Time | Space | Notes |
+|---------|--------|------|-------|------|
+| Add | `s.add(x)` | O(1) | O(1) | Hash insert |
+| Remove | `s.remove(x)` | O(1) | O(1) | Error if missing |
+| Discard | `s.discard(x)` | O(1) | O(1) | No error |
+| Lookup | `x in s` | O(1) | — | Hash lookup |
+| Length | `len(s)` | O(1) | — | Stored internally |
+| Iterate | `for x in s` | O(n) | — | Visits all |
+| Clear | `s.clear()` | O(n) | O(1) | Removes all |
+| Copy | `s.copy()` | O(n) | O(n) | New set |
+| Union | `s | t` | O(n + m) | O(n + m) | Combine |
+| Intersection | `s & t` | O(min(n,m)) | O(min(n,m)) | Shared elems |
+| Difference | `s - t` | O(n) | O(n) | Remove elems |
+
+## Python `dict` (HashMap)
+
+HashMap
+```python
+key → value
+```
+Example:
+```python
+{"apple": 3, "banana": 5}
+```
+
+| Operation | Example | Time | Space | Notes |
+|---------|--------|------|-------|------|
+| Insert / Update | `d[k] = v` | O(1) | O(1) | Hash insert |
+| Lookup | `d[k]` | O(1) | — | Key lookup |
+| Get (safe) | `d.get(k)` | O(1) | — | No KeyError |
+| Delete | `del d[k]` | O(1) | O(1) | Remove key |
+| Pop | `d.pop(k)` | O(1) | O(1) | Remove + return |
+| Contains key | `k in d` | O(1) | — | Hash lookup |
+| Length | `len(d)` | O(1) | — | Stored |
+| Iterate keys | `for k in d` | O(n) | — | Keys |
+| Iterate values | `for v in d.values()` | O(n) | — | Values |
+| Iterate items | `for k,v in d.items()` | O(n) | — | Pairs |
+| Clear | `d.clear()` | O(n) | O(1) | Removes all |
+| Copy | `d.copy()` | O(n) | O(n) | New dict |
 ## Dictionary
 Time Complexities:
 ![Dictionary Operations](https://user-images.githubusercontent.com/47276307/172330107-e68e3228-1c76-4bfb-bb38-04d18f94d5b9.jpg)
