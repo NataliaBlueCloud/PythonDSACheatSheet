@@ -94,19 +94,27 @@ Example:
 ```python
 {"apple", "banana"}
 ```
-| Operation | Example | Time | Space | Notes |
-|---------|--------|------|-------|------|
-| Add | `s.add(x)` | O(1) | O(1) | Hash insert |
-| Remove | `s.remove(x)` | O(1) | O(1) | Error if missing |
-| Discard | `s.discard(x)` | O(1) | O(1) | No error |
-| Lookup | `x in s` | O(1) | — | Hash lookup |
-| Length | `len(s)` | O(1) | — | Stored internally |
-| Iterate | `for x in s` | O(n) | — | Visits all |
-| Clear | `s.clear()` | O(n) | O(1) | Removes all |
-| Copy | `s.copy()` | O(n) | O(n) | New set |
-| Union | `s | t` | O(n + m) | O(n + m) | Combine |
-| Intersection | `s & t` | O(min(n,m)) | O(min(n,m)) | Shared elems |
-| Difference | `s - t` | O(n) | O(n) | Remove elems |
+
+| Operation | Example | Time | Space | DSA Usage |
+|---------|--------|------|-------|----------|
+| Create | `s = set()` | O(1) | O(1) | Init |
+| Create from list | `set(nums)` | O(n) | O(n) | Remove duplicates |
+| Add element | `s.add(x)` | O(1) | O(1) | Track seen |
+| Remove element | `s.remove(x)` | O(1) | O(1) | Must exist |
+| Discard element | `s.discard(x)` | O(1) | O(1) | Safe remove |
+| Pop arbitrary | `s.pop()` | O(1) | O(1) | Rarely used |
+| Membership test | `x in s` | O(1) | — | Core operation |
+| Length | `len(s)` | O(1) | — | Count unique |
+| Iterate | `for x in s:` | O(n) | — | Visit all |
+| Clear | `s.clear()` | O(n) | O(1) | Reset |
+| Copy | `s.copy()` | O(n) | O(n) | Duplicate |
+| Union | `s | t` / `s.union(t)` | O(n + m) | O(n + m) | Merge |
+| Intersection | `s & t` / `s.intersection(t)` | O(min(n,m)) | O(min(n,m)) | Common elems |
+| Difference | `s - t` / `s.difference(t)` | O(n) | O(n) | Remove elems |
+| Symmetric diff | `s ^ t` | O(n + m) | O(n + m) | XOR |
+| Update | `s.update(t)` | O(m) | O(1) | In-place union |
+| Intersection update | `s.intersection_update(t)` | O(min(n,m)) | O(1) | In-place |
+| Difference update | `s.difference_update(t)` | O(m) | O(1) | In-place |
 
 ## Python `dict` (HashMap)
 
