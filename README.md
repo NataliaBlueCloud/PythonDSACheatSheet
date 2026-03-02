@@ -95,6 +95,9 @@ Example:
 {"apple", "banana"}
 ```
 
+:heavy_exclamation_mark: stores only unique elements
+:heavy_exclamation_mark: automatically removes duplicates
+
 | Operation | Example | Time | Space | DSA Usage |
 |---------|--------|------|-------|----------|
 | Create | `s = set()` | O(1) | O(1) | Init |
