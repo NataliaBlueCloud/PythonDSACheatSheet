@@ -44,6 +44,7 @@ Time Complexities:
 
 | Operation | Example | Time | Space | DSA Notes |
 |---------|--------|------|-------|----------|
+|Create val list|[val] * len(arr)| O(1) | O(1) | Init |
 | Create empty | `arr = []` | O(1) | O(1) | Init |
 | Create with values | `[1,2,3]` | O(n) | O(n) | Allocation |
 | Access by index | `arr[i]` | O(1) | — | Core operation |
