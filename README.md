@@ -27,12 +27,16 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
 ## Data Types
 ![Python Data Types](https://user-images.githubusercontent.com/59110866/173563442-1a6fa3d2-b569-4eb0-99cc-9b91cc8be1eb.png)
 
+
+
 ## Operator Precedence
 ![Python Operators](https://user-images.githubusercontent.com/47276307/172329850-61fc0809-a4b0-416c-848b-1c502ecb4772.jpg)
 
 ![Complexity Big O Notation](complexity_O_Notation.png)
-
-
+```python
+value = float('-inf')
+value = float('-inf')
+```
 # Data Structures
 
 ## Lists
