@@ -40,8 +40,9 @@ value = float('-inf')
 
 # Bit Manipulation 
 
+
 | Operation | Syntax | Example | Result | Use Case |
-|-----------|--------|--------|--------|----------|
+|-----------|--------|---------|--------|----------|
 | AND | `a & b` | `5 & 3` | `1` | Check common bits |
 | OR | `a \| b` | `5 \| 3` | `7` | Set bits |
 | XOR | `a ^ b` | `5 ^ 3` | `6` | Toggle bits / find unique number |
@@ -54,36 +55,52 @@ value = float('-inf')
 ## Common Bit Tricks
 
 | Task | Expression | Example | Explanation |
-|-----|-----|-----|-----|
-| Check if number is odd | `n & 1` | `5 & 1 → 1` | Last bit indicates odd |
-| Check if bit `i` is set | `n & (1 << i)` | `5 & (1<<0)` | Checks specific bit |
-| Set bit `i` | `n \| (1 << i)` | `5 \| (1<<1)` | Forces bit to `1` |
-| Clear bit `i` | `n & ~(1 << i)` | `5 & ~(1<<0)` | Forces bit to `0` |
-| Toggle bit `i` | `n ^ (1 << i)` | `5 ^ (1<<1)` | Flips bit |
-| Remove lowest set bit | `n & (n-1)` | `12 & 11` | Removes lowest `1` |
-| Count bits | `n.bit_count()` | `5.bit_count()` | Counts number of `1`s |
+|------|------------|---------|-------------|
+| Check if number is odd | `n & 1` | `5 & 1` | Last bit indicates odd |
+| Check if bit `i` is set | `n & (1 << i)` | `5 & (1 << 0)` | Checks specific bit |
+| Set bit `i` | `n \| (1 << i)` | `5 \| (1 << 1)` | Forces bit to `1` |
+| Clear bit `i` | `n & ~(1 << i)` | `5 & ~(1 << 0)` | Forces bit to `0` |
+| Toggle bit `i` | `n ^ (1 << i)` | `5 ^ (1 << 1)` | Flips bit |
+| Remove lowest set bit | `n & (n - 1)` | `12 & 11` | Removes the lowest `1` bit |
+| Count set bits | `n.bit_count()` | `5.bit_count()` | Counts number of `1` bits |
+| Count binary length | `n.bit_length()` | `5.bit_length()` | Counts bits needed to represent the number |
 
 ---
 
 ## Useful Python Binary Functions
 
 | Function | Example | Output | Purpose |
-|----------|--------|--------|--------|
+|----------|---------|--------|---------|
 | Convert to binary | `bin(5)` | `'0b101'` | Debug binary representation |
-| Binary → int | `int('101',2)` | `5` | Convert binary string |
-| Count bits | `5.bit_count()` | `2` | Number of `1` bits |
+| Binary string to int | `int('101', 2)` | `5` | Convert binary string to integer |
+| Count set bits | `5.bit_count()` | `2` | Number of `1` bits |
+| Count binary length | `5.bit_length()` | `3` | Number of bits in binary representation |
+
+---
+
+## `bit_count()` vs `bit_length()`
+
+| Number | Binary | `bit_count()` | `bit_length()` |
+|--------|--------|---------------|----------------|
+| `0` | `0` | `0` | `0` |
+| `5` | `101` | `2` | `3` |
+| `8` | `1000` | `1` | `4` |
+| `15` | `1111` | `4` | `4` |
+
+- `bit_count()` = how many `1`s are in the binary form
+- `bit_length()` = how many bits are needed to write the number in binary
 
 ---
 
 ## Problems Where These Appear
 
 | Problem | Key Operation |
-|-------|-------|
+|---------|---------------|
 | Sum of Two Integers | `^`, `&`, `<<` |
-| Number of 1 Bits | `n & (n-1)` |
+| Number of 1 Bits | `n.bit_count()` or `n & (n - 1)` |
 | Counting Bits | `i >> 1`, `i & 1` |
 | Missing Number | XOR `^` |
-| Reverse Bits | `<<`, `>>`, `&` |
+| Reverse Bits | `<<`, `>>`, `&`, `\|` |
 
 
 # Data Structures
