@@ -53,12 +53,17 @@ value = float('-inf')
 ---
 ## ⚠️ Common Bit Manipulation Mistake
 
-### ❌ Wrong way to check if a bit is set
-
+### Check if a bit is set
+❌ Wrong way
 ```python
 if (n & (1 << i)) == 1:
 ```
-
+✅ Correct ways
+```python
+if (n & (1 << i)) != 0:
+#or
+if n & (1 << i):
+```
 ## Common Bit Tricks
 
 | Task | Expression | Example | Explanation |
