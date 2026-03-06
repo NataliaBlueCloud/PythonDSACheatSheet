@@ -115,6 +115,39 @@ if n & (1 << i):
 | Reverse Bits | `<<`, `>>`, `&`, `\|` |
 
 
+### ⚠️ Python Multiple Assignment vs Sequential Assignment
+
+When updating variables that depend on their **previous values**, use **tuple assignment**.
+
+✅ Correct
+
+```python
+a, b = a ^ b, (a & b) << 1
+````
+
+Python evaluates the **right side first**, then assigns both variables.
+Both expressions use the **old values** of `a` and `b`.
+
+Equivalent to:
+
+```python
+temp1 = a ^ b
+temp2 = (a & b) << 1
+a = temp1
+b = temp2
+```
+
+❌ Incorrect
+
+```python
+a = a ^ b
+b = (a & b) << 1
+```
+
+Here `a` is updated **before** computing `b`, so the carry uses the **new `a`**, which breaks the algorithm.
+
+
+
 # Data Structures
 
 ## Lists
