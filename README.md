@@ -57,6 +57,7 @@ value = float('-inf')
 
 ```python
 if (n & (1 << i)) == 1:
+```
 
 ## Common Bit Tricks
 
