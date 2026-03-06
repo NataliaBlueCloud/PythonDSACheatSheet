@@ -37,6 +37,55 @@ A Cheat Sheet 📜 to **revise** Python syntax in **less time**. Particularly us
 value = float('-inf')
 value = float('-inf')
 ```
+
+# Bit Manipulation 
+
+| Operation | Syntax | Example | Result | Use Case |
+|-----------|--------|--------|--------|----------|
+| AND | `a & b` | `5 & 3` | `1` | Check common bits |
+| OR | `a \| b` | `5 \| 3` | `7` | Set bits |
+| XOR | `a ^ b` | `5 ^ 3` | `6` | Toggle bits / find unique number |
+| NOT | `~a` | `~5` | `-6` | Invert bits |
+| Left Shift | `a << n` | `1 << 3` | `8` | Multiply by `2^n` |
+| Right Shift | `a >> n` | `8 >> 2` | `2` | Divide by `2^n` |
+
+---
+
+## Common Bit Tricks
+
+| Task | Expression | Example | Explanation |
+|-----|-----|-----|-----|
+| Check if number is odd | `n & 1` | `5 & 1 → 1` | Last bit indicates odd |
+| Check if bit `i` is set | `n & (1 << i)` | `5 & (1<<0)` | Checks specific bit |
+| Set bit `i` | `n \| (1 << i)` | `5 \| (1<<1)` | Forces bit to `1` |
+| Clear bit `i` | `n & ~(1 << i)` | `5 & ~(1<<0)` | Forces bit to `0` |
+| Toggle bit `i` | `n ^ (1 << i)` | `5 ^ (1<<1)` | Flips bit |
+| Remove lowest set bit | `n & (n-1)` | `12 & 11` | Removes lowest `1` |
+| Count bits | `n.bit_count()` | `5.bit_count()` | Counts number of `1`s |
+
+---
+
+## Useful Python Binary Functions
+
+| Function | Example | Output | Purpose |
+|----------|--------|--------|--------|
+| Convert to binary | `bin(5)` | `'0b101'` | Debug binary representation |
+| Binary → int | `int('101',2)` | `5` | Convert binary string |
+| Count bits | `5.bit_count()` | `2` | Number of `1` bits |
+
+---
+
+## Problems Where These Appear
+
+| Problem | Key Operation |
+|-------|-------|
+| Sum of Two Integers | `^`, `&`, `<<` |
+| Number of 1 Bits | `n & (n-1)` |
+| Counting Bits | `i >> 1`, `i & 1` |
+| Missing Number | XOR `^` |
+| Reverse Bits | `<<`, `>>`, `&` |
+
+
 # Data Structures
 
 ## Lists
