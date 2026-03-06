@@ -51,6 +51,12 @@ value = float('-inf')
 | Right Shift | `a >> n` | `8 >> 2` | `2` | Divide by `2^n` |
 
 ---
+## ⚠️ Common Bit Manipulation Mistake
+
+### ❌ Wrong way to check if a bit is set
+
+```python
+if (n & (1 << i)) == 1:
 
 ## Common Bit Tricks
 
